@@ -9,8 +9,11 @@
         <div class="col">
             <a href="{% url 'index' %}" class="btn btn-dark my-3">Home</a>
             <div style="height: 90vh;">
-                <img src="{{details.image.url}}" style="max-width: 100%; max-height: 100%;">
-                <p>{{details.description}}</p> 
+                <img src="{{photo.image.url}}" style="max-width: 100%; max-height: 100%;">
+                <p>{{photo.name}}</p> 
+                <p>Category: {{photo.category}}</p> 
+                <p>{{photo.pub_date}}</p> 
+                <p>{{photo.description}}</p> 
             </div>
         </div>
     </div>

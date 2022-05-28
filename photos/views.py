@@ -5,13 +5,13 @@ from .models import Category, Location, Image
 def index(request):
     category = request.GET.get('category')
     if category == None:
-        photos = Image.objects.all()
+        images = Image.objects.all()
     else:
-        photos = Image.objects.filter(category__name=category) 
+        images = Image.objects.filter(category__name=category) 
 
     categories = Category.objects.all()  
 
-    context = {'categories':categories, 'photos':photos}
+    context = {'categories':categories, 'images':images}
     return render(request, 'index.html', context)
 
 
@@ -25,27 +25,22 @@ def photo_details(request, pk):
 
 
 def upload_photo(request):
-    pass 
-    # categories = Category.objects.all()
+    categories = Category.objects.all()
     
-    # if request.method == "POST":
-    #     data = request.POST
-    #     image = request.FILES.get("image") 
+    if request.method == "POST":
+        data = request.POST
+        image = request.FILES.get("image") 
 
-    #     if data['category'] != 'none':
-    #         category = Category.objects.get(id=data['category'])
-    #     elif data['category_new'] != '':
-    #         category, created = Category.objects.get_or_create(name=data['category_new']) 
-    #     else:
-    #         category = None
+        if data['category'] != 'none':
+            category = Category.objects.get(id=data['category'])
+        elif data['category_new'] != '':
+            category, created = Category.objects.get_or_create(name=data['category_new']) 
+        else:
+            category = None
 
-    #     photo = Image.objects.create(
-    #         category = category,
-    #         description = data['description'],
-    #         image = image,
-    #     )
+        photo = Image.objects.create(category=category, description=data['description'], image=image)
 
-    #     return redirect('index') 
+        return redirect('index') 
 
-    # context = {'categories':categories}
-    # return render(request, 'upload_photo.html', context)  
+    context = {'categories':categories}
+    return render(request, 'upload_photo.html', context)  
