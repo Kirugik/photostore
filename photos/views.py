@@ -6,6 +6,7 @@ def index(request):
     category = request.GET.get('category')
     if category == None:
         images = Image.objects.all()
+        
     else:
         images = Image.objects.filter(category__name=category) 
 
@@ -20,7 +21,6 @@ def index(request):
 def photo_details(request, pk):
     photo = Image.objects.get(id=pk)
     return render(request, 'photo_details.html', {'photo':photo}) 
-
 
 
 
