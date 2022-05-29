@@ -7,39 +7,21 @@
 <div class="container mt-5"> 
     <div class="row">
         <div class="col-md-1">
-            <!-- <div class="card">
-                <div class="card-header">
-                  Categories
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><a href="{% url 'index' %}">All</a></li>
-                    {% for category in categories %}
-                    <li class="list-group-item">
-                        <a href="{% url 'index' %}?category={{category.name}}">
-                        {{category.name}}</a>
-                    </li>
-                    {% endfor %}
 
-                    <a href="{% url 'upload' %}"  class="btn btn-dark btn-block btn-sm m-1">Add Photo</a>
-                </ul>
-            </div> -->
-            <!-- <a href="{% url 'upload' %}"  class="btn btn-dark btn-block btn-sm m-1">Upload Photo</a> -->
         </div>
-        
         <div class="col-md-10">
-            <div class="row">
+            <div class="row"> 
 
                 {% for image in images %} 
                 <div class="col-md-4 mb-3" id="photo">
                     <div class="card my-2">
-                        <img class="image-thumbnail" src="{{image.image.url}}" alt="Image" style="height: 200px; object-fit: cover">
+                        <img class="image-thumbnail" src="{{image.image.url}}" alt="Image" style="height: 150px; object-fit: cover">
 
                         <div class="card-body">
                             <small>{{image.name}}</small> 
                         </div>
-                        
                     </div>
-                    <!-- <a href="{% url 'details' image.id %}" class="btn btn-sm m-1" style="background-color: #5A5560; outline: none; color: #ffffff;">View Photo Details</a> -->
+                    <!-- <a href="{% url 'details' image.id %}" class="btn btn-sm m-1" style="background-color: #5A5560; outline: none; color: #ffffff;">View Photo Details</a> --> 
 
 
 
@@ -48,15 +30,15 @@
 
                     <!-- Button trigger modal -->
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                        Viewww Photo Details 
+                        View Photo Details 
                     </button> 
                     
                     <!-- Modal -->
                     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="staticBackdropLabel">About this Photo</h5>
+                                <div class="modal-header"> 
+                                    <h5 class="modal-title" id="staticBackdropLabel">Photo Details</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
@@ -86,16 +68,10 @@
 
 
 
-
-
-
-
-
                 </div>
                 {% empty %}
                 <h3>There are no photos...</h3>
-                {% endfor %}  
-                
+                {% endfor %} 
             </div>
         </div>
 
