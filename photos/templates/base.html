@@ -1,3 +1,5 @@
+{% load bootstrap3 %}
+{% load static %} 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,15 +7,76 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+
     <!-- bootstrap css -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=BioRhyme&family=Caladea&family=Inconsolata:wght@300;400;500;600&family=Josefin+Sans:ital,wght@0,400;1,500&family=Roboto&display=swap" rel="stylesheet"> 
+
+    <style>
+      body, html {
+        margin: 0;
+        padding: 0;
+        font-size: 15px;
+        font-family: 'BioRhyme', serif; 
+        }
+
+      #logo {
+          font-size: 30px;
+          color: #FAED26;
+        }
+
+      #logo:hover {
+        color: #ffffff;
+        }
+
+      nav {
+          background-color: #5A5560;
+          color: #FAED26;
+        }
+
+      .nav-link { 
+          color: #FAED26; 
+        }
+
+      .nav-link:hover { 
+          color: #ffffff
+        }
+
+      .form-control {
+        width: 300px; 
+       }
+
+      #search-btn:hover {
+        background-color: #FAED26;
+       }
+
+      #copyright {
+        background-color: #5A5560;
+        color: #FAED26;
+        }
+
+      #copyright a {
+        text-decoration: none;
+        color: #FAED26; 
+        }
+      </style>
+
     <title>{% block title %}Photo Gallery{% endblock %}</title>
+    
+    
+    
+    {% block styles %}
+      <!-- {% bootstrap_css %} -->
+      <link rel="stylesheet" href="{% static 'css/styles.css' %}">  
+    {% endblock %}
+
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary"> 
+    <nav class="navbar navbar-expand-lg"> 
         <div class="container-fluid">
-          <a class="navbar-brand" href="/">PhotoStore</a>
+          <a class="navbar-brand" id="logo" href="/">PhotoStore</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-content" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -37,15 +100,12 @@
                     <a class="dropdown-item" href="{% url 'index' %}?category={{category.name}}">
                       {{category.name}}</a></li>
                     {% endfor %}
-                  <!-- <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Action</a></li> -->
                 </ul>
               </li>
             </ul>
             <form class="d-flex">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-light" type="submit">Search</button>
+              <button class="btn btn-outline-light" type="submit" id="search-btn">Search</button>
             </form>
           </div>
         </div>
@@ -54,7 +114,7 @@
     
     {% endblock %}
 
-    <footer class="bg-light text-center text-lg-start">
+    <footer class="text-center">
         <!-- Section: Social media -->
         <section class="mb-4">
             <!-- Facebook -->
@@ -77,16 +137,24 @@
         </section>
       <!-- Section: Social media -->
         <!-- Copyright -->
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-            © 2022 Copyright:
-            <a class="text-dark" href="#">PhotoStore.com</a> 
+        <div class="text-center p-3" id="copyright">
+             Copyright © 2022
+            <a href="#">PhotoStore.com. All Rights Reserved</a> 
         </div>
         <!-- Copyright -->
     </footer>
 
-    
+
+
+
+
+
+    {% block scripts %}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> 
+
     <!-- Popper and Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+  {% endblock %}
 </body>
 </html>
