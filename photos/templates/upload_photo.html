@@ -4,9 +4,9 @@
 
 
 {% block content %} 
-<div class="container">
+<div class="container mt-5">
     <div class="row justify-content-center">
-        <div class="col-md-4">
+        <div class="col-md-5">
             <div class="card">
 
                 <form method="POST" action="" enctype="multipart/form-data">
@@ -14,12 +14,12 @@
 
                     <div class="form-group m-3">
                         <label>Photo description</label>
-                        <input required name="description" type="text" placeholder="Enter a description" class="form-control">
+                        <input required name="description" type="text" placeholder="Enter a description" class="form-control" style="width: 400px;">
                     </div>
 
                     <div class="form-group m-3">
                         <label>Select a category</label>
-                        <select name="category" class="form-control">
+                        <select name="category" class="form-control" style="width: 400px;">
                             <option value="none">Select a category...</option>
 
                             {% for category in categories %}
@@ -30,15 +30,15 @@
 
                     <div class="form-group m-3">
                         <label>Create a new category</label>
-                        <input name="category_new" type="text" placeholder="Create a new category" class="form-control">
+                        <input name="category_new" type="text" placeholder="Create a new category" class="form-control" style="width: 400px;">
                     </div>
 
                     <div class="form-group m-3">
                         <label>Upload Image</label>
-                        <input required name="image" type="file" class="form-control">
+                        <input required name="image" type="file" class="form-control" style="width: 400px;">
                     </div>
 
-                    <button type="submit" class="btn btn-success m-3">Submit</button>
+                    <button type="submit" class="btn m-3" style="background-color: #5A5560; outline: none; color: #ffffff; position:relative; left: 30%;">Submit</button>
                 </form>
             </div>
         </div>

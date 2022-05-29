@@ -36,13 +36,9 @@ class Location(models.Model):
     @classmethod
     def update_location(cls, id, value):
         cls.objects.filter(id=id).update(image=value)
-    
-    @classmethod
-    def get_locations(cls):
-        locations = Location.objects.all()
-        return locations 
 
 
+        
 
 
 class Image(models.Model):

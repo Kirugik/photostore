@@ -4,15 +4,24 @@ from .models import Category, Location, Image
 # Create your views here.
 def index(request):
     category = request.GET.get('category')
+    
     if category == None:
         images = Image.objects.all()
-        
     else:
-        images = Image.objects.filter(category__name=category) 
+        images = Image.objects.filter(category__name=category)
+    categories = Category.objects.all() 
 
-    categories = Category.objects.all()  
 
-    context = {'categories':categories, 'images':images}
+    location = request.GET.get('location') 
+    if location == None:
+        # locations = Location.objects.all()  
+        loc_images = Image.objects.all()
+    else:
+        # locations = Location.objects.filter(location__name=location) 
+        loc_images = Image.objects.filter(location__name=location) 
+    locations = Location.objects.all()  
+
+    context = {'categories':categories, 'images':images, 'locations': locations, 'loc_images':loc_images}
     return render(request, 'index.html', context)
 
 
