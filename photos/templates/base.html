@@ -96,7 +96,7 @@
               <li class="nav-item dropdown" style="margin-right: 10px;"> 
                 <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categories</a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="{% url 'index' %}">All</a></li>
+                  <li><a class="dropdown-item" href="{% url 'index' %}">All Photos</a></li>
                       {% for category in categories %}
                   <li><a class="dropdown-item" href="{% url 'index' %}?category={{category.name}}">
                       {{category.name}}</a></li>
@@ -108,8 +108,8 @@
               <!-- Locations -->
               <li class="nav-item dropdown" style="margin-right: 20px;">
                 <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Locations</a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="{% url 'index' %}">All</a></li>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown"> 
+                  <li><a class="dropdown-item" href="{% url 'index' %}">All Locations</a></li>
                   {% for location in locations %}
                   <li><a class="dropdown-item" href="{% url 'index' %}?location={{location.name}}">
                       {{location.name}}</a></li>
