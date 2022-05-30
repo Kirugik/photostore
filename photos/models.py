@@ -34,6 +34,11 @@ class Location(models.Model):
         self.delete()
     
     @classmethod
+    def get_locations(cls):
+        locations = Location.objects.all()
+        return locations
+    
+    @classmethod
     def update_location(cls, id, value):
         cls.objects.filter(id=id).update(image=value)
 
