@@ -53,3 +53,17 @@ def upload_photo(request):
 
     context = {'categories':categories}
     return render(request, 'upload_photo.html', context)  
+
+
+def search_categories(request): 
+
+    if 'image' in request.GET and request.GET["image"]:
+        search_term = request.GET.get("image")
+        searched_photos = Image.search_image(search_term)
+        message = f"{search_term}"
+
+        return render(request, 'all-news/search.html',{"message":message,"articles": searched_photos})
+
+    else:
+        message = "You haven't searched for any term"
+        return render(request, 'search.html',{"message":message})
