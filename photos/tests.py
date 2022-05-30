@@ -19,7 +19,7 @@ class CategoryTestClass(TestCase):
     def test_delete_category(self):
         self.travelling.delete_category()
         categories = Category.objects.all()
-        self.assertTrue(len(categories) == 0)  
+        self.assertTrue(len(categories) == 0)   
 
 
 class TestLocation(TestCase):
@@ -40,7 +40,7 @@ class TestLocation(TestCase):
         locations = Location.get_locations()
         self.assertTrue(len(locations) > 1)
     
-    def test_delete_location(self):
+    def test_delete_location(self): 
         self.nairobi.delete_location()
         location = Location.objects.all()
         self.assertTrue(len(location) == 0)
@@ -92,7 +92,7 @@ class TestImage(TestCase):
         image = Image.objects.filter(id=self.sample_image.id)
         self.assertTrue(myimage, image)
 
-    def test_search_image_by_location(self):
+    def test_filter_by_location(self):
         self.sample_image.save_image()
         loc_images = self.sample_image.filter_by_location(location='Nairobi')
         self.assertTrue(len(loc_images) == 1)
