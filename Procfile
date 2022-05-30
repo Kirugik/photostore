@@ -1,0 +1,1 @@
+web: gunicorn photostore.wsgi --log-file -

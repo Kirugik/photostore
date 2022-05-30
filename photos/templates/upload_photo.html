@@ -14,13 +14,13 @@
 
                     <div class="form-group m-3">
                         <label>Photo description</label>
-                        <input required name="description" type="text" placeholder="Enter a description" class="form-control" style="width: 400px;">
+                        <input required name="description" type="text" placeholder="Enter photo description" class="form-control" style="width: 400px;">
                     </div>
 
                     <div class="form-group m-3">
-                        <label>Select a category</label>
+                        <label>Category</label>
                         <select name="category" class="form-control" style="width: 400px;">
-                            <option value="none">Select a category...</option>
+                            <option value="none">Choose category...</option>
 
                             {% for category in categories %}
                             <option value="{{category.id}}">{{category.name}}</option>
@@ -29,11 +29,11 @@
                     </div>
 
                     <div class="form-group m-3">
-                        <label>Create a new category</label>
+                        <label>Create category</label>
                         <input name="category_new" type="text" placeholder="Create a new category" class="form-control" style="width: 400px;">
                     </div>
 
-                    <div class="form-group m-3">
+                    <div class="form-group m-3"> 
                         <label>Upload Image</label>
                         <input required name="image" type="file" class="form-control" style="width: 400px;">
                     </div>

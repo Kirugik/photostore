@@ -29,7 +29,7 @@ def index(request):
 
 def photo_details(request, pk):
     photo = Image.objects.get(id=pk)
-    return render(request, 'index.html', {'photo':photo}) 
+    return render(request, 'photo_details.html', {'photo':photo}) 
 
 
 
