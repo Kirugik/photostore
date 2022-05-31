@@ -13,7 +13,7 @@
             <div class="row"> 
 
                 {% for image in images %} 
-                <div class="col-md-4 mb-3" id="photo">
+                <div class="col-md-4 mb-5" id="photo">
                     <div class="card my-2">
                         <img class="image-thumbnail" src="{{image.image.url}}" alt="Image" style="height: 200px; object-fit: cover">
 
@@ -21,7 +21,7 @@
                             <small>{{image.name}}</small> 
                         </div>
                     </div>
-                    <a href="{% url 'details' image.id %}" class="btn btn-sm m-1" style="background-color: #5A5560; outline: none; color: #ffffff;">View Photo Details</a> 
+                    <a href="{% url 'details' image.id %}" class="btn btn-sm m-1 mb-5" style="background-color: #5A5560; outline: none; color: #ffffff;">View Photo Details</a> 
 
 
 

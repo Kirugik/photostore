@@ -66,14 +66,15 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 # Application definition
 
 INSTALLED_APPS = [
-    'bootstrap3', 
+    'bootstrap3',
+    'fontawesomefree', 
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'photos.apps.PhotosConfig',  
+    'photos.apps.PhotosConfig',   
 ]
 
 MIDDLEWARE = [

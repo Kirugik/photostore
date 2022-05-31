@@ -71,7 +71,9 @@
     
     {% block styles %}
       <!-- {% bootstrap_css %} -->
-      <link rel="stylesheet" href="{% static 'css/styles.css' %}">  
+      <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+      <script src="{% static 'fontawesomefree/js/all.min.js' %}"></script> 
+      <link href="{% static 'fontawesomefree/css/all.min.css' %}" rel="stylesheet" type="text/css">   
     {% endblock %}
 
 </head>
@@ -148,33 +150,28 @@
     {% endblock %}
 
     <footer class="text-center" style="position: absolute; bottom: 0; width:100%; height: 50px;">
-        <!-- Section: Social media -->
-        <section class="mb-4">
+        <div class="text-center p-3" id="copyright">
+          <div class="socials mt-2 mb-3"> 
             <!-- Facebook -->
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fa-brands fa-facebook"></i></a>
-  
+            <a href="#"><i class="fa-brands fa-facebook" style="color: #ffffff; font-size: 20px; margin-right: 15px;"></i></a>
+
             <!-- Twitter -->
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter" style="color: #ffffff; font-size: 20px; margin-right: 15px;"></i></a>
     
             <!-- Google -->
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-google"></i></a>
+            <a href="#"><i class="fa-brands fa-google" style="color: #ffffff; font-size: 20px; margin-right: 15px;"></i></a>
     
             <!-- Instagram -->
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram" style="color: #ffffff; font-size: 20px; margin-right: 15px;"></i></a>
     
             <!-- Linkedin -->
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin-in" style="color: #ffffff; font-size: 20px; margin-right: 15px;"></i></a>
     
             <!-- Github -->
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>
-        </section>
-      <!-- Section: Social media -->
-        <!-- Copyright -->
-        <div class="text-center p-3" id="copyright">
-             Copyright © 2022
-            <a href="#">PhotoStore.com. All Rights Reserved</a> 
+            <a href="#"><i class="fa-brands fa-github" style="color: #ffffff; font-size: 20px;"></i></a>
+          </div>
+          Copyright © 2022 <a href="/">PhotoStore.com. All Rights Reserved</a> 
         </div>
-        <!-- Copyright -->
     </footer>
 
 
