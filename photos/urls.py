@@ -8,6 +8,7 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('details/<str:pk>/', views.photo_details, name='details'),
     path('upload/', views.upload_photo, name='upload'), 
+    path('search/', views.search_categories, name='search_categories')
 ]
 
 if settings.DEBUG:
