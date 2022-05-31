@@ -62,7 +62,7 @@ def search_categories(request):
         searched_photos = Image.search_image(search_term)
         message = f"{search_term}"
 
-        return render(request, 'all-news/search.html',{"message":message,"articles": searched_photos})
+        return render(request, 'search.html',{"message":message,"images": searched_photos})
 
     else:
         message = "You haven't searched for any term"
