@@ -20,6 +20,8 @@ from decouple import config,Csv
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+DATABASE_URL = "postgresql://postgres:UbnrEjLDduR9QQ42Ltmy@containers-us-west-43.railway.app:7866/railway"
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -42,6 +44,7 @@ if config('MODE')=="dev":
        }
        
    }
+
 # production
 else:
    DATABASES = {
@@ -58,9 +61,9 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
+DEBUG = True
 
-# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
